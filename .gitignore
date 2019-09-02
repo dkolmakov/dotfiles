@@ -1,0 +1,17 @@
+# ignore everything by default
+/*
+
+# exclude necessary files in the following lines
+
+# gitignore itself
+!/.gitignore
+
+# git config
+!/.gitconfig
+!/.gitignore.global
+
+
+# bash profile
+!/.bashrc
+!/.bash_profile
+

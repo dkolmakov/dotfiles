@@ -1,0 +1,52 @@
+# local user config, usernames, etc
+[include]
+	path = ~/.gitconfig.local
+[credential]
+	helper = store
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore.global
+	pager = diff-so-fancy | less --tabs=4 -RFX
+#[merge]
+#	tool = vimdiff
+#	conflictstyle = diff3
+[push]
+	default = simple
+[tag]
+	sort = version:refname
+[alias]
+	bb = branch -vv
+	cc = commit
+	co = checkout
+	ss = status
+	ls = log --pretty=format:'%C(auto)%h%d %Cblue%cn%Creset %s' --decorate --numstat
+	# graphical commits tree
+	ll = log --graph --oneline --decorate
+	# graphical commits tree with names and dates
+	la = log --graph --pretty=format:'%C(auto)%h %ad%d %Cblue%an%Creset %s' --date=relative
+	# changes in file
+	lf = log -u
+	# pulled changes
+	fetchlog = log ORIG_HEAD.. --stat --no-merges
+	# wipe unsaved changes
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+[color]
+	ui = auto
+[fetch]
+	prune = true
+[rebase]
+	autosquash = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[diff-so-fancy]
+	markEmptyLines = false
