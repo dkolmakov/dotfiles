@@ -119,4 +119,4 @@ fi
 PATH=$PATH:~/bin
 
 # Source local scripts
-source .bashrc.local
+[[ -f ~/.bashrc.local ]] && . ~/.bashrc.local
